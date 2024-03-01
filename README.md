@@ -4,7 +4,7 @@
 
 ## Ссылка на деплой
 
-pay-point.vercel.app
+[pay-point.vercel.app](https://pay-point.vercel.app/)
 
 ## Как запустить приложение
 
