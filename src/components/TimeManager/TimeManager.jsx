@@ -6,11 +6,11 @@ const TimeManager = () => {
     const [showFirstTimer, setShowFirstTimer] = useState(true);
     const [firstTimerDelay, setFirstTimerDelay] = useState(() => {
         const storedDelay = localStorage.getItem("firstTimerDelay");
-        return storedDelay ? parseInt(storedDelay) : 0;
+        return storedDelay ? parseInt(storedDelay) : 1;
     });
     const [secondTimerDelay, setSecondTimerDelay] = useState(() => {
         const storedDelay = localStorage.getItem("secondTimerDelay");
-        return storedDelay ? parseInt(storedDelay) : 0;
+        return storedDelay ? parseInt(storedDelay) : 1;
     });
     const [firstTimerRunning, setFirstTimerRunning] = useState(false);
     const [secondTimerRunning, setSecondTimerRunning] = useState(false);
