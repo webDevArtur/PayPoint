@@ -8,7 +8,7 @@ const Timer = ({ visible, initialMinutes, isRunning, onStart, onReset, onStop, o
     const [isInputEmpty, setIsInputEmpty] = useState(true);
     const [inputError, setInputError] = useState('');
 
-    useEffect(() => {
+     useEffect(() => {
         let interval;
 
         if (isRunning) {
@@ -16,28 +16,22 @@ const Timer = ({ visible, initialMinutes, isRunning, onStart, onReset, onStop, o
                 setTime(prevTime => {
                     let newSeconds = prevTime.seconds - 1;
                     let newMinutes = prevTime.minutes;
-    
+
                     if (newSeconds < 0) {
                         newSeconds = 59;
                         newMinutes -= 1;
                     }
-    
-                    if (newMinutes < 0) {
-                        clearInterval(interval);
-                        setIsFinished(true);
-                        return { minutes: 0, seconds: 0 };
-                    }
-    
+
                     if (newMinutes === 0 && newSeconds === 0) {
                         clearInterval(interval);
                         setIsFinished(true);
                     }
-    
+
                     return { minutes: newMinutes, seconds: newSeconds };
                 });
             }, 1000);
         }
-    
+
         return () => clearInterval(interval);
     }, [isRunning]);
 
